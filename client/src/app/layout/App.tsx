@@ -1,21 +1,20 @@
-import { useEffect, useState } from 'react'
-import { CssBaseline, Container, Box } from '@mui/material'
+import {  useState } from 'react'
+import { CssBaseline, Container, Box, Typography } from '@mui/material'
 import './App.css'
 import NavBar from './NavBar';
 import ActivityDashboard from '../../features/Activity/Dashboard/ActivityDashboard';
+import { useActivities } from '../../lib/types/hooks/useActivities';
+
+
 
 function App() {
-  const [activities, setActivities] = useState<Activity[]>([]);
   const [selectedActivity, setSelectedActivity] = useState<Activity | undefined>(undefined);
   const [editMode, setEditMode] = useState(false);
-
-  useEffect(()=>{
-    fetch('http://localhost:5281/api/activities')
-      .then(response => response.json())
-      .then(data => {console.log(data);setActivities(data);})
-  }, []);
+  const {activities, isPending} = useActivities();
+ 
 
  const handleSelectActivity = (id: string) => {
+  if (!activities) return;
   setSelectedActivity(activities.find(x => x.id === id));
  }
 
@@ -33,28 +32,30 @@ function App() {
   setEditMode(false);
  }
 
- const handleDelete = (id: string) => {
-  setActivities(activities.filter(activity => activity.id !== id));
-}
+ 
 
  const handleSubmitForm = (activity: Activity) => {
-  if(activity.id){
-    setActivities(activities.map(x=> x.id === activity.id ? activity : x));
-  }else{
-    const newActivity ={...activity, id: activities.length.toString()}
-    setSelectedActivity(newActivity);
-    setActivities([...activities, newActivity]);
-  }
+  // if(activity.id){
+  //   setActivities(activities.map(x=> x.id === activity.id ? activity : x));
+  // }else{
+  //   const newActivity ={...activity, id: activities.length.toString()}
+  //   setSelectedActivity(newActivity);
+  //   setActivities([...activities, newActivity]);
+  // }
+  console.log(activity);
   setEditMode(false);
 }
 
   return (
     <>
-      <Box sx={{bgcolor:'#eeeeee'}}>
+      <Box sx={{bgcolor:'#eeeeee', minHeight:'100vh'}}>
       <CssBaseline />
       <NavBar openForm={handleFormOpen} />
       <Container maxWidth='xl' sx={{mt:3}}>
-         <ActivityDashboard 
+        {!activities || isPending? (
+          <Typography>Loading...</Typography>
+        ):(
+          <ActivityDashboard 
          activities={activities} 
          selectActivity={handleSelectActivity}
          cancelSelectActivity={handleCancelSelectActivity}
@@ -63,9 +64,11 @@ function App() {
          openForm={handleFormOpen}
          closeForm={handleFormClose}
          submitForm={handleSubmitForm}
-         deleteActivity={handleDelete}
+         
          
          />
+        )}
+         
       </Container>
       </Box>
     </>
