@@ -21,4 +21,12 @@ public class ActivitiesController : ControllerBase
     {
         return await _context.Activities.ToListAsync();
     }
+     // GET BY ID
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Activity>> GetActivity(Guid id)
+    {   
+        var activity = await _context.Activities.FindAsync(id);
+        if(activity == null) return NotFound();
+        return activity;
+    }
 }
