@@ -306,6 +306,8 @@ C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\n
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\ActivityApp.runtimeconfig.json
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\ActivityApp.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\ActivityApp.pdb
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Humanizer.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\MediatR.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\MediatR.Contracts.dll
@@ -325,6 +327,10 @@ C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\n
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Sqlite.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.OpenApi.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\Mono.TextTemplating.dll
@@ -450,3 +456,5 @@ C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\obj\Debug\n
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\obj\Debug\net10.0\ActivityApp.pdb
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\obj\Debug\net10.0\ActivityApp.genruntimeconfig.cache
 C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\obj\Debug\net10.0\ref\ActivityApp.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\FluentValidation.dll
+C:\Users\kumar\OneDrive\Desktop\DotNet Practice\Practice\ActivityApp\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll

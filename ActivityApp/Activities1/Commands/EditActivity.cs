@@ -2,6 +2,7 @@ using Persistence;
 using MediatR;
 using Domain;
 using System.Net;
+using Application.Activities.DTOs;
 
 namespace ActivityApp.Activities1.Commands;
 
@@ -9,7 +10,7 @@ public class EditActivity
 {
     public class Command : IRequest<Unit>   // ✅ MUST be generic
     {
-        public required Activity Activity { get; set; }
+        public required EditActivityDto ActivityDto { get; set; }
     }
 
     public class Handler(AppDbContext context) 
@@ -18,7 +19,7 @@ public class EditActivity
         public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
         {
             var activity = await context.Activities.FindAsync(
-                new object[] { request.Activity.Id },
+                new object[] { request.ActivityDto.Id },
                 cancellationToken
             );
 
@@ -27,12 +28,12 @@ public class EditActivity
                 throw new Exception("Activity not found");
             }
 
-            activity.Title = request.Activity.Title;
-            activity.Description = request.Activity.Description;
-            activity.Category = request.Activity.Category;
-            activity.Date = request.Activity.Date;
-            activity.City = request.Activity.City;
-            activity.Venue = request.Activity.Venue;
+            activity.Title = request.ActivityDto.Title;
+            activity.Description = request.ActivityDto.Description;
+            activity.Category = request.ActivityDto.Category;
+            activity.Date = request.ActivityDto.Date;
+            activity.City = request.ActivityDto.City;
+            activity.Venue = request.ActivityDto.Venue;
 
             var success = await context.SaveChangesAsync(cancellationToken) > 0;
 

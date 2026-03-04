@@ -1,38 +1,31 @@
-using System;
-using System.Net;
 using MediatR;
 using Persistence;
 using Domain;
+using Application.Activities.DTOs;
+using AutoMapper;
+using FluentValidation;
 
 namespace ActivityApp.Activities1.Commands;
+
 public class CreateActivity
 {
     public class Command : IRequest<Unit>
     {
-        public required Activity Activity { get; set; }
+        public required CreateActivityDto ActivityDto { get; set; }
     }
 
-    public class Handler : IRequestHandler<Command, Unit>
+    public class Handler(AppDbContext context, IMapper mapper) 
+        : IRequestHandler<Command, Unit>
     {
-        private readonly AppDbContext _context;
-
-        public Handler(AppDbContext context)
-        {
-            _context = context;
-        }
-
         public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
         {
-            request.Activity.Id = Guid.NewGuid();  // ✅ Correct
+            var activity = mapper.Map<Activity>(request.ActivityDto);
 
-            _context.Activities.Add(request.Activity);
+            context.Activities.Add(activity);
 
-            var success = await _context.SaveChangesAsync(cancellationToken) > 0;
+            await context.SaveChangesAsync(cancellationToken);
 
-            if (!success)
-                throw new Exception("Problem saving activity");
-
-            return Unit.Value;
+            return Unit.Value;   
         }
     }
 }
