@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router";
 import App from "../layout/App";
 import HomePage from "../../features/Activity/home/HomePage";
 import ActivityDashboard from "../../features/Activity/Dashboard/ActivityDashboard";
-import ActivityForm from "../../features/Activity/ActivityForm";
+import ActivityForm from "../../features/Activity/form/ActivityForm";
 import ActivityDetailPage from "../../lib/types/ActivityDetailPage";
 import Counter from "../../features/Activity/counter/Counter";
 import TestErrors from "../../features/Activity/error/TestErrors";
