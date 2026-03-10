@@ -47,11 +47,10 @@ export default function ActivityForm() {
   }, [activity, reset]);
 
   const onSubmit: SubmitHandler<ActivitySchema> = (data) => {
-  // Create the submission object that matches the 'Activity' type exactly
   const activityToSubmit = {
-    ...activity,    // Includes id, latitude, longitude, isCancelled
-    ...data,        // Overwrites title, description, category, etc.
-    date: data.date.toISOString(), // Fix: Convert Date object to string
+    ...activity,   
+    ...data,        
+    date: data.date.toISOString(),
   };
 
   if (id) {

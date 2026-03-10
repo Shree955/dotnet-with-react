@@ -6,6 +6,7 @@ using Application.Activities.DTOs;
 using MediatR;
 using ActivityApp.Activities1.Commands;
 using Application.Activities1.Queries;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers;
 
@@ -13,6 +14,7 @@ namespace API.Controllers;
 [Route("api/[controller]")]
 public class ActivitiesController : ControllerBase
 {
+   
     private readonly AppDbContext _context;
     private readonly IMediator _mediator;
 
@@ -21,13 +23,13 @@ public class ActivitiesController : ControllerBase
         _context = context;
         _mediator = mediator;
     }
-
+    
     [HttpGet]
     public async Task<ActionResult<List<Activity>>> GetActivities()
     {
         return await _context.Activities.ToListAsync();
     }
-     // GET BY ID
+     
     [HttpGet("{id}")]
     public async Task<ActionResult<Activity>> GetActivity(Guid id)
     {   
